@@ -1,0 +1,1 @@
+Stock = {'Banana', 5}
