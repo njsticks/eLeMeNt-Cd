@@ -1,5 +1,37 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+    
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Frequency', 'Problem'],
+              [ 4,      7],
+              [ 8,      6.5],
+              [ 5,     3],
+              [ 3,      6],
+              [ 9.5,      3],
+              [ 7,    4],
+              [ 7,    5.5]
+            ]);
+    
+            var options = {
+              title: 'Frequency vs. Size',
+              hAxis: {title: 'Size', minValue: 0, maxValue: 10},
+              vAxis: {title: 'Frequency', minValue: 0, maxValue: 10},
+              legend: 'none'
+          
+            };
+    
+            var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+    
+            chart.draw(data, options);
+          }
+        </script>
+      </head>
 <title>Team eLeMeNt CD Project Page</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,20 +73,16 @@ th, td {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-
-
 </style>
   <body class="d-flex flex-column h-100">
     <!-- Begin page content -->
 <main role="main" class="flex-shrink-0">
   <div class="container">
-    <h1 class="mt-5">Sticky footer</h1>
-    <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p>
-    <p>Use <a href="/docs/4.3/examples/sticky-footer-navbar/">the sticky footer with a fixed navbar</a> if need be, too.</p>
+    <h1 class="mt-5">List of problems we came up with in our team</h1>
   </div>
   <p class="w3-center w3-large"></p>
   <table style="width:100%">
-      <caption>List of problems we came up with in our team</caption>
+      <caption></caption>
       <tr>
         <th>Industry</th>
         <th>User</th>
@@ -65,7 +93,7 @@ tr:nth-child(even) {
         <th>User to interview</th>
       </tr>
       <tr>
-        <td>Education</td>
+        <td>1. Education</td>
         <td>Learners</td>
         <td>Learners don't have access infrustructure in rural areas</td>
         <td>Learners education suffers</td>
@@ -74,7 +102,7 @@ tr:nth-child(even) {
         <td>Learners/Rural educators</td>
       </tr>
       <tr>
-        <td>Public Transport</td>
+        <td>2. Public Transport</td>
         <td>Passengers in Rural Areas</td>
         <td>The transportation is expensive into town</td>
         <td>Because the taxi drivers are taking advantage of poor passengers</td>
@@ -83,7 +111,7 @@ tr:nth-child(even) {
         <td>Rural commuters</td>
       </tr>
       <tr>
-          <td>Internet</td>
+          <td>2. Internet</td>
           <td>YouTube Watchers</td>
           <td>Too much time on internet</td>
           <td>Because Students fail from too much time being wasted</td>
@@ -92,7 +120,7 @@ tr:nth-child(even) {
           <td></td>
         </tr>
         <tr>
-            <td>Home Affairs</td>
+            <td>3. Home Affairs</td>
             <td>Home Affairs</td>
             <td>People waste a whole day at Home Affairs queues</td>
             <td>People are wasting a huge amount of time in the queue while not being helped or being productive </td>
@@ -101,7 +129,7 @@ tr:nth-child(even) {
             <td></td>
           </tr>
           <tr>
-              <td>Household</td>
+              <td>4. Household</td>
               <td>Clean Shower people</td>
               <td>All the hot water pipes are cold </td>
               <td>Shower people like hot water</td>
@@ -110,7 +138,7 @@ tr:nth-child(even) {
               <td></td>
             </tr>
             <tr>
-                <td>Education</td>
+                <td>5. Education</td>
                 <td>Learners</td>
                 <td>Peer pressure among learners</td>
                 <td></td>
@@ -119,7 +147,7 @@ tr:nth-child(even) {
                 <td>schools</td>
               </tr>
               <tr>
-                  <td>Spaza shop</td>
+                  <td>6. Spaza shop</td>
                   <td>Shop Oweners</td>
                   <td>Small business shop owners lack a system to help them keep track of stock and debtors, this results in not maximising their profit. This important because this adds to the many financial pressures such as rent, raising supplier prices.</td>
                   <td></td>
@@ -131,6 +159,11 @@ tr:nth-child(even) {
   
 </div>
 </main>
+
+<p>To narrow down our list problems to solve we first looks at the frequency 
+  vs size of the problem occurring, see the plot below
+</p>
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
 
 <footer class="footer mt-auto py-3">
   <div class="container">
